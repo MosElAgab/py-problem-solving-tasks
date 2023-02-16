@@ -6,6 +6,10 @@ def test_it_only_accept_integers_by_throwing_TypeError():
         contains_digits('', 100)
     with pytest.raises(TypeError, match='input object must be an instance of integer'):
         contains_digits(5, '')
+# digit input must be from 0 to 9
+def test_it_only_accepts_appropriate_digit_input():
+    with pytest.raises(Exception, match='digit argument must be from 0 to 9'):
+        contains_digits(10, 100)
 
 def test_it_returns_instance_of_list():
     result = contains_digits(0, 1)
@@ -21,9 +25,7 @@ def test_it_returns_a_list_with_single_match_when_only_one_match_exist():
     result = contains_digits(5, 9)
     expected = [5]
     assert result == expected
-    result = contains_digits(10, 9)
-    expected = []
-    assert result == expected
+   
 
 def test_evaluates_numerals_units_position():
     expected = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
