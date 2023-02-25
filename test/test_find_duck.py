@@ -1,6 +1,5 @@
 from src.find_duck import (find_duck)
 
-
 def test_finds_lonesome_duck():
     expected = 1
     result = find_duck('🦆')

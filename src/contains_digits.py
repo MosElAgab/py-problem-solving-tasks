@@ -18,5 +18,3 @@ def contains_digits(digit, range_of_numbers):
    
        
     return output
-
-print(contains_digits(5, 1000))
